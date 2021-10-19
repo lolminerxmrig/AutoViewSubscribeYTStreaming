@@ -48,10 +48,10 @@ def view_channel():
     #print(check_like)
     if "true" in str(check_like):
         print(f"[{time.strftime('%d-%m-%y %X')}] Already Like Video Success")
-    else:
+    elif "false" in str(check_like):
         xpath_el('(//yt-icon-button[@class="style-scope ytd-toggle-button-renderer style-text"])[1]')
         print(f"[{time.strftime('%d-%m-%y %X')}] Like Video Success")
-        
+    
     sub_vid = wait(browser,10).until(EC.presence_of_element_located((By.XPATH,'//tp-yt-paper-button[@class="style-scope ytd-subscribe-button-renderer"]')))
     check_sub = sub_vid.get_attribute('aria-label')
     #print(check_sub)
@@ -99,7 +99,7 @@ def login():
         view_channel()
     except Exception as e:
         sleep(2)
-        print(e)
+        
 
 
 def open_browser(k):
