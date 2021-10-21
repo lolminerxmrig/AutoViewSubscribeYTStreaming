@@ -18,7 +18,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 cwd = os.getcwd()
 
 opts = webdriver.ChromeOptions()
-opts.headless = False
+opts.headless = True
 opts.add_argument('log-level=3') 
 dc = DesiredCapabilities.CHROME
 dc['loggingPrefs'] = {'driver': 'OFF', 'server': 'OFF', 'browser': 'OFF'}
