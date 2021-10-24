@@ -11,7 +11,7 @@ Auto View Subscribe YT Streaming without Proxy and Can't Bypass Ads
     
     4. type on command line: npm i
     
-    5. after that, run the script: node index.js
+    5. after that, run the script: node view_proxy.js
     
     *Note: Change the proxy server and credential in script
     
