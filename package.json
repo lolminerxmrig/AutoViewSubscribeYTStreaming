@@ -1,0 +1,21 @@
+{
+  "name": "auto_view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "view_stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-paths": "^1.0.1",
+    "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-stealth": "^2.7.8",
+    "puppeteer-page-proxy": "^1.2.8",
+    "readline-sync": "^1.4.10"
+ 
+  }
+}
