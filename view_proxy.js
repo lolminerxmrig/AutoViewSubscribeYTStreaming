@@ -3,6 +3,7 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 const chromePaths = require('chrome-paths');
 const readlineSync = require('readline-sync');
+const UserAgents = require('user-agents');
 const url = readlineSync.question('Masukan URL Stream nya: ');
 const view = readlineSync.question('Masukan jumlah view (ex. 10) : ')
 ;(async () => {
@@ -18,7 +19,7 @@ const view = readlineSync.question('Masukan jumlah view (ex. 10) : ')
             '--no-first-run',
             '--disable-dev-shm-usage',
             '--window-size=300x200',
-            '--proxy-server=http://isp2.hydraproxy.com:9989' //change your proxy server
+            `--proxy-server=http://isp2.hydraproxy.com:9989`
         ];
 
         const browser = await puppeteer.launch({
@@ -30,14 +31,16 @@ const view = readlineSync.question('Masukan jumlah view (ex. 10) : ')
             args
         });
         try{
-            //change your credential
+           
+
+            
             const page = await browser.newPage();
             await page.authenticate({
-                username: 'rjd15131gncp356##',
+                username: 'rjd15131gncp35696',
                 password: 'EtRrll3CcsXO4CMW'
-            });
-            await page.emulateTimezone("Asia/Jakarta");
-        
+            }); 
+            const userAgent = new UserAgents();
+            await page.setUserAgent(userAgent.toString());
             await page.setDefaultNavigationTimeout(0);
             await page.goto(url,{waitUntil: "networkidle2"})
             try{
